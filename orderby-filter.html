@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>
+
+AngularJs OrderBy filter Example
+
+</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script>
+
+var app = angular.module("AngularOrderByApp", []);
+
+app.controller("orderbyctrl", function ($scope) {
+
+$scope.users = [{
+
+name: "Anusree Ravindran",
+
+age: 22
+
+}, {
+
+name: "Arya Ravindran",
+
+age: 19
+
+}, {
+
+name: "Siny Ravindran",
+
+age: 41
+
+}, {
+
+name: "Ravindran VG",
+
+age: 51
+
+}];
+
+});
+
+</script>
+
+</head>
+
+<body ng-app="AngularOrderByApp">
+
+<div ng-controller="orderbyctrl">
+
+<p>OrderBy Name in Ascending Order</p>
+
+<ul ng-repeat="user in users | orderBy : 'name'">
+
+<li>{{user.name}}</li>
+
+</ul>
+
+<p>OrderBy Name in Descending Order</p>
+
+<ul ng-repeat="user in users | orderBy : 'name' : true">
+
+<li>{{user.name}}</li>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>
